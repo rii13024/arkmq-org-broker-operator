@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"github.com/RHsyseng/operator-utils/pkg/olm"
-	"github.com/arkmq-org/arkmq-org-broker-operator/v2/api/v1beta2"
+	"github.com/arkmq-org/arkmq-org-broker-operator/api/v1beta2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -54,8 +54,8 @@ var _ = Describe("Common Test", func() {
 
 	It("getDeploymentCondition", func() {
 
-		cr := &v1beta2.BrokerCluster{
-			Spec: v1beta2.BrokerClusterSpec{
+		cr := &v1beta2.Broker{
+			Spec: v1beta2.BrokerSpec{
 				DeploymentPlan: v1beta2.DeploymentPlanType{
 					Size: Int32ToPtr(2),
 				},
